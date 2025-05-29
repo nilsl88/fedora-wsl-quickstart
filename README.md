@@ -19,7 +19,7 @@ Open **PowerShell** with Administrator rights and run:
 wsl --install --no-distribution
 ```
 
-## 2. Reboot Your Machine
+## 2. Reboot your machine
 
 Run the following command in PowerShell to reboot immediately:
 
@@ -27,7 +27,7 @@ Run the following command in PowerShell to reboot immediately:
 shutdown.exe /r /t 0
 ```
 
-## 3. List Available Distributions
+## 3. List available distributions
 
 After rebooting, list available WSL distributions:
 
@@ -43,7 +43,7 @@ To install Fedora (for example, Fedora Linux 42):
 wsl --install -d FedoraLinux-42
 ```
 
-## 5. Install Useful Tools
+## 5. Install useful tools
 
 Once Fedora is installed and running, install useful tools by running:
 
@@ -53,13 +53,13 @@ sudo sed -i '/^\[main\]$/a max_parallel_downloads=20' /etc/dnf/dnf.conf
 sudo dnf install -y vim-enhanced nano bat git wget curl axel zstd bash-completion ncdu btop htop nmon tmux fuse-sshfs waypipe
 ```
 
-### 5.1 Set Up an SSH Key for the Current User
+### 5.1 Set up an SSH key for the current user
 
 ```bash
 ssh-keygen -t ed25519 -a 100 -N "" -f ~/.ssh/id_ed25519 -q
 ```
 
-### 5.2 Fix Fractional Scaling for Waypipe (If Needed)
+### 5.2 Fix Fractional Scaling for waypipe (if needed)
 
 If fractional scaling is not working, add the following workaround:
 
@@ -71,7 +71,7 @@ WESTON_RDP_DEBUG_DESKTOP_SCALING_FACTOR=175
 EOF
 ```
 
-## 6. Reboot or Close All Running WSL Instances if Waypipe still has issues
+## 6. Reboot or close all running WSL instances if Waypipe still has issues
 
 ```powershell
 wsl --shutdown
